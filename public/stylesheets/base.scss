@@ -1,0 +1,28 @@
+// Import the colour scheme
+@import 'scheme';
+
+h1 {
+  font-weight: bold;
+  font-size: 2.2em;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  border: 3px solid $primary-color;
+  background-color: rgba(0,0,0,0);
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+button:hover {
+  background: $primary-color;
+}

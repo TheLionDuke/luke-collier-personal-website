@@ -1,0 +1,235 @@
+
+// Import the colour scheme
+@import 'scheme';
+// Import the mixins
+@import 'mixins';
+
+// Styles the selection across the entire page
+::selection {
+  background: $primary-color;
+}
+
+.main-nav {
+  ul {
+    z-index: 500;
+    position:fixed;
+    @include flexbox();
+    @include justify-content(flex-end);
+    background-color: $secondary-color;
+    margin: 0;
+    padding: 0;
+    width:100%;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .logo {
+    margin-right:auto;
+    font-size: 3em;
+    color: $primary-color;
+  }
+
+  a {
+    font-size: 1.2em;
+    display: block;
+    color: white;
+    padding: 1em;
+    text-decoration: none;
+  }
+
+  a:hover {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+}
+
+.video {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+
+  z-index: -100;
+  @include transform(translateX(-50%), translateY(0%));
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.profile {
+  position: absolute;
+  top: calc(50% - 64px);
+  width:100%;
+  background-color: rgba(0, 0, 0, .4);
+
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  text-align: center;
+
+  img {
+    display: inline-block;
+    margin: 8px;
+    width: 128px;
+    border: 2px solid $primary-color;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .details {
+    display:inline;
+    margin: 8px;
+    padding: 0;
+  }
+
+  h1, h2 {
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.next-nav {
+  position: absolute;
+  top: calc(80% - 16px);
+  width:100%;
+
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+  text-align: center;
+
+  button {
+    background-color: rgba(0,0,0,.4); /* Transparent */
+    color: white;
+  }
+}
+
+/**
+* Content
+*/
+.content {
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+  @include direction(column);
+
+  .about {
+    width: 70%;
+    text-align:center;
+  }
+
+  .projects {
+    width: 100%;
+    background-color: $primary-color;
+    color: white;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    @include direction(column);
+  }
+
+  .Connect {
+    width: 100%;
+    text-align:center;
+  }
+}
+
+.skills-container {
+  .skills-card {
+    width:300px;
+    margin:8px;
+
+    img {
+      height: calc(64px);
+      width: calc(64px);
+    }
+  }
+}
+
+.flex-center-container {
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+  @include direction(row);
+  @include flex-wrap(wrap);
+}
+
+
+.projects-container {
+  width: 90%;
+  .project-card {
+    width: 400px;
+    height: 150px;
+    padding: 16px;
+    margin:16px;
+    border: 2px solid $secondary-color;
+    background-size: auto;
+    background-position: center center;
+    p, h2 {
+      display:none;
+    }
+  }
+}
+
+.social-nav {
+  ul {
+    @include flexbox();
+    margin: 0;
+    padding: 0;
+    @include justify-content(center);
+    width:100%;
+    @include flex-wrap(wrap);
+
+  }
+
+  li {
+    list-style-type: none;
+    margin:32px;
+  }
+
+  a {
+    border: 2px solid $primary-color;
+    border-radius: 7.5%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    font-size: 1.2em;
+    display: block;
+    color: white;
+    padding: 1em;
+    text-decoration: none;
+
+    img {
+      width:64px;
+      height:64px;
+    }
+  }
+
+  a:hover {
+    background-color: $primary-color;
+  }
+}
+
+.footer {
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  @include direction(column);
+
+  height: 200px;
+  width: 100%;
+  text-align:center;
+  background-color: $secondary-color;
+  color: white;
+  a {
+    color: $primary-color;
+  }
+}

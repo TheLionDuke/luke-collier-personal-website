@@ -1,0 +1,54 @@
+// Mixins
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+@mixin justify-content($val) {
+  -webkit-justify-content: $val;
+  -moz-justify-content: $val;
+  justify-content: $val;
+}
+
+@mixin align-items($val) {
+  -webkit-align-items: $val;
+  -align-items: $val;
+}
+
+@mixin direction($val) {
+  -webkit-flex-direction: $val;
+  -moz-box-direction: $val;
+  flex-direction: $val;
+}
+
+@mixin flex-wrap($val) {
+  flex-wrap: $val;
+  -webkit-flex-wrap: $val;
+}
+
+@mixin transform($val-x, $val-y) {
+  -webkit-transform: $val-x $val-y;
+  -moz-transform: $val-x $val-y;
+  -ms-transform: $val-x $val-y;
+  transform: $val-x $val-y;
+}
