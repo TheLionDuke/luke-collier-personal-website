@@ -31,6 +31,20 @@ window.onload = function init(){
     // Listen for scroll changes
     window.onscroll = function() {
         getNavSelectionsVisible();
+
+
+        // Get the div element div
+        var divId = document.getElementById("header");
+        var navBarId = document.getElementById("main-nav");
+
+        //Value of the end of the div like
+        var divEnd = divId.offsetHeight-navBarId.offsetHeight;
+
+        if(divEnd <= window.scrollY) {
+            document.getElementById("main-nav").classList.add("nav-bar-live");
+        } else {
+            document.getElementById("main-nav").classList.remove("nav-bar-live");
+        }
     }
 };
 

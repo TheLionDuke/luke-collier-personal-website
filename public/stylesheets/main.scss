@@ -9,14 +9,19 @@
   background: $primary-color;
 }
 
+.nav-bar-live {
+  background: rgba(60, 60, 60, 1);
+}
+
 .main-nav {
   position:fixed;
   width:100%;
   z-index: 500;
+
   ul {
     @include flexbox();
     @include justify-content(flex-end);
-    background-color: $secondary-color;
+    background: rgba(60, 60, 60, 0);
     margin: 0;
     padding: 0;
   }
@@ -29,6 +34,8 @@
     margin-right:auto;
     font-size: 3em;
     color: $primary-color;
+    background-color: $secondary-color;
+    @include rounded-border(50%);
   }
 
   a {
