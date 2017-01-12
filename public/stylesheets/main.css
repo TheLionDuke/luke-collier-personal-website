@@ -5,36 +5,37 @@
 ::selection {
   background: #e8cf22; }
 
-.main-nav ul {
-  z-index: 500;
+.main-nav {
   position: fixed;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: flex-end;
-  -moz-justify-content: flex-end;
-  justify-content: flex-end;
-  background-color: #3c3c3c;
-  margin: 0;
-  padding: 0;
-  width: 100%; }
-.main-nav li {
-  list-style-type: none; }
-.main-nav .logo {
-  margin-right: auto;
-  font-size: 3em;
-  color: #e8cf22; }
-.main-nav a {
-  font-size: 1.2em;
-  display: block;
-  color: white;
-  padding: 1em;
-  text-decoration: none; }
-.main-nav a:hover {
-  background-color: #e8cf22;
-  color: #3c3c3c; }
+  width: 100%;
+  z-index: 500; }
+  .main-nav ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    justify-content: flex-end;
+    background-color: #3c3c3c;
+    margin: 0;
+    padding: 0; }
+  .main-nav li {
+    list-style-type: none; }
+  .main-nav .logo {
+    margin-right: auto;
+    font-size: 3em;
+    color: #e8cf22; }
+  .main-nav a {
+    font-size: 1.2em;
+    display: block;
+    color: white;
+    padding: 1em;
+    text-decoration: none; }
+  .main-nav a:hover, .main-nav a.active, .main-nav a:active {
+    background-color: #e8cf22;
+    color: #3c3c3c; }
 
 .video {
   position: relative;
@@ -52,10 +53,6 @@
   overflow: hidden; }
 
 .profile {
-  position: absolute;
-  top: calc(50% - 64px);
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -66,16 +63,22 @@
   justify-content: center;
   -webkit-align-items: center;
   -align-items: center;
+  position: absolute;
+  top: calc(50% - 64px);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
   text-align: center; }
   .profile img {
-    display: inline-block;
-    margin: 8px;
-    width: 128px;
     border: 2px solid #e8cf22;
     border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover; }
+    background-size: cover;
+    display: inline-block;
+    margin: 8px;
+    width: 128px; }
   .profile .details {
     display: inline;
     margin: 8px;
@@ -127,7 +130,7 @@
     text-align: center; }
   .content .projects {
     width: 100%;
-    background-color: #e8cf22;
+    background-color: #E86850;
     color: white;
     display: -webkit-box;
     display: -moz-box;
@@ -142,7 +145,7 @@
     -webkit-flex-direction: column;
     -moz-box-direction: column;
     flex-direction: column; }
-  .content .Connect {
+  .content .connect {
     width: 100%;
     text-align: center; }
 
@@ -164,24 +167,30 @@
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  -webkit-flex-direction: row;
-  -moz-box-direction: row;
-  flex-direction: row;
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap; }
 
 .projects-container {
-  width: 90%; }
+  margin-bottom: 32px; }
   .projects-container .project-card {
-    width: 400px;
-    height: 150px;
+    background: #3c3c3c;
+    width: 27.5%;
+    min-width: 260px;
     padding: 16px;
     margin: 16px;
-    border: 2px solid #3c3c3c;
-    background-size: auto;
-    background-position: center center; }
-    .projects-container .project-card p, .projects-container .project-card h2 {
-      display: none; }
+    border: 2px solid black;
+    background-size: auto; }
+    .projects-container .project-card button {
+      color: white;
+      margin: 8px;
+      background-color: rgba(0, 0, 0, 0.4); }
+    .projects-container .project-card button:hover {
+      background-color: #e8cf22;
+      color: #3c3c3c; }
+
+.projects-details {
+  text-align: center;
+  width: 50%; }
 
 .social-nav ul {
   display: -webkit-box;
@@ -189,20 +198,22 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  margin: 0;
-  padding: 0;
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
-  width: 100%;
   flex-wrap: wrap;
-  -webkit-flex-wrap: wrap; }
+  -webkit-flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  width: 100%; }
 .social-nav li {
   list-style-type: none;
   margin: 32px; }
 .social-nav a {
   border: 2px solid #e8cf22;
   border-radius: 7.5%;
+  -webkit-border-radius: 7.5%;
+  -moz-border-radius: 7.5%;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
