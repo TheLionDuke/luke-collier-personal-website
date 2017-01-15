@@ -13,6 +13,37 @@
   background: rgba(60, 60, 60, 1);
 }
 
+.sticky-footer {
+  position:fixed;
+  display:none;
+  bottom:0;
+  z-index: 501;
+  width:100%;
+  @include flexbox();
+  @include justify-content(flex-end);
+  a {
+    margin-right:96px;
+    display: block;
+    color:white;
+    background: rgba(0, 0, 0, 0.5);
+
+    text-align: center;
+
+    height:45px;
+    width:90px;
+    border-radius: 90px 90px 0 0;
+    -moz-border-radius: 90px 90px 0 0;
+    -webkit-border-radius: 90px 90px 0 0;
+
+    text-decoration: none;
+    font-size:32px;
+  }
+  a:hover {
+    background: $primary-color;
+    color:black;
+  }
+}
+
 .main-nav {
   position:fixed;
   width:100%;
@@ -21,7 +52,7 @@
   ul {
     @include flexbox();
     @include justify-content(flex-end);
-    background: rgba(60, 60, 60, 0);
+    background: rgba(60, 60, 60, 0.5);
     margin: 0;
     padding: 0;
   }
@@ -171,7 +202,7 @@
     min-width: 260px;
     padding: 16px;
     margin: 16px;
-    border: 2px solid black;
+    border: 2px solid $primary-color;
     background-size: auto;
 
     button {

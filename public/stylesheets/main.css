@@ -8,6 +8,37 @@
 .nav-bar-live {
   background: #3c3c3c; }
 
+.sticky-footer {
+  position: fixed;
+  display: none;
+  bottom: 0;
+  z-index: 501;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  justify-content: flex-end; }
+  .sticky-footer a {
+    margin-right: 96px;
+    display: block;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    height: 45px;
+    width: 90px;
+    border-radius: 90px 90px 0 0;
+    -moz-border-radius: 90px 90px 0 0;
+    -webkit-border-radius: 90px 90px 0 0;
+    text-decoration: none;
+    font-size: 32px; }
+  .sticky-footer a:hover {
+    background: #e8cf22;
+    color: black; }
+
 .main-nav {
   position: fixed;
   width: 100%;
@@ -21,7 +52,7 @@
     -webkit-justify-content: flex-end;
     -moz-justify-content: flex-end;
     justify-content: flex-end;
-    background: rgba(60, 60, 60, 0);
+    background: rgba(60, 60, 60, 0.5);
     margin: 0;
     padding: 0; }
   .main-nav li {
@@ -189,7 +220,7 @@
     min-width: 260px;
     padding: 16px;
     margin: 16px;
-    border: 2px solid black;
+    border: 2px solid #e8cf22;
     background-size: auto; }
     .projects-container .project-card button {
       color: white;

@@ -8,7 +8,27 @@ window.onresize = function resize(event) {
     getNavSelectionsVisible();
 };
 
+// Listen for scroll changes
+window.onscroll = function() {
+    getNavSelectionsVisible();
+
+    // Get the div element div
+    var divId = document.getElementById("home");
+    var navBarId = document.getElementById("main-nav");
+
+    //Value of the end of the div like
+    var divEnd = divId.offsetHeight-navBarId.offsetHeight;
+
+    navBarId.classList.toggle("nav-bar-live", divEnd <= window.scrollY );
+
+    document.getElementById("sticky-footer").classList.toggle("hidden", divEnd >= window.scrollY+(screen.height/2) );
+};
+
 window.onload = function init(){
+    document.getElementById("to-top").onclick = function() {
+        window.scrollTo(window.scrollX,0);
+    };
+
     // the code to be called when the dom has loaded
     // #document has its nodes
     document.getElementById("continue-button").onclick = function() {
@@ -26,26 +46,6 @@ window.onload = function init(){
     document.getElementById("connect-nav").onclick = function() {
         scrollToSection("connect");
     };
-
-
-    // Listen for scroll changes
-    window.onscroll = function() {
-        getNavSelectionsVisible();
-
-
-        // Get the div element div
-        var divId = document.getElementById("header");
-        var navBarId = document.getElementById("main-nav");
-
-        //Value of the end of the div like
-        var divEnd = divId.offsetHeight-navBarId.offsetHeight;
-
-        if(divEnd <= window.scrollY) {
-            document.getElementById("main-nav").classList.add("nav-bar-live");
-        } else {
-            document.getElementById("main-nav").classList.remove("nav-bar-live");
-        }
-    }
 };
 
 function getNavSelectionsVisible() {
@@ -68,16 +68,16 @@ function getNavSectionVisible(navName) {
     var scrollY = window.scrollY+(screen.height/2);
 
     // Check if the y scroll
-    if(top <= scrollY && bottom >= scrollY) {
-        document.getElementById(navName+"-nav").classList.add("active");
-    } else {
-        document.getElementById(navName+"-nav").classList.remove("active");
-    }
+    document.getElementById(navName+"-nav").classList.toggle("active", top <= scrollY && bottom >= scrollY);
 }
 
 function scrollToSection(navName) {
     var divId = document.getElementById(navName);
     var navBarId = document.getElementById("main-nav");
     var scrollY = divId.offsetTop - navBarId.offsetHeight;
-    window.scrollTo(window.scrollX,scrollY);
+    //window.scrollTo(window.scrollX,scrollY);
+    // Scroll to a certain element
+    divId.scrollIntoView({
+        behavior: 'smooth'
+    });
 }

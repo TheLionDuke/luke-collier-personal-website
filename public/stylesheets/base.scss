@@ -1,6 +1,9 @@
 // Import the colour scheme
 @import 'scheme';
 
+html {
+}
+
 h1 {
   font-weight: bold;
   font-size: 2.2em;
@@ -25,4 +28,8 @@ button {
 
 button:hover {
   background: $primary-color;
+}
+
+.hidden {
+  display:none;
 }

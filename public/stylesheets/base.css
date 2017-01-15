@@ -24,4 +24,7 @@ button {
 button:hover {
   background: #e8cf22; }
 
+.hidden {
+  display: none; }
+
 /*# sourceMappingURL=base.css.map */
