@@ -1,0 +1,20 @@
+@import '_helper';
+
+// Import the colour scheme
+@import '_base';
+
+.footer {
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  @include direction(column);
+
+  height: 300px;
+  width: 100%;
+  text-align:center;
+  background-color: $secondary-color;
+  color: white;
+  a {
+    color: $primary-color;
+  }
+}

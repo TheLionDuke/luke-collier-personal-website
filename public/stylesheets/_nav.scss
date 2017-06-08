@@ -1,0 +1,78 @@
+@import '_helper';
+
+// Import the colour scheme
+@import '_base';
+
+.nav-bar-live {
+  background: $secondary-color;
+}
+
+.main-nav {
+  position: fixed;
+  width: 100%;
+  z-index: 500;
+
+  ul {
+    @include flexbox();
+    @include justify-content(flex-end);
+    background: rgba(60, 60, 60, 0);
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .logo {
+    margin-right:auto;
+    font-size: 3em;
+    color: white;
+    @include rounded-border(50%);
+    border-color: white;
+  }
+
+  a {
+    font-size: 1.2em;
+    display: block;
+    color: white;
+    padding: 1em;
+    text-decoration: none;
+  }
+
+  a:hover, a.active, a:active {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+}
+
+.sticky-footer {
+  position:fixed;
+  display:none;
+  bottom:0;
+  z-index: 501;
+  width:100%;
+  @include flexbox();
+  @include justify-content(flex-end);
+  a {
+    margin-right:96px;
+    display: block;
+    color:white;
+    background: rgba(0, 0, 0, 0.5);
+
+    text-align: center;
+
+    height:45px;
+    width:90px;
+    border-radius: 90px 90px 0 0;
+    -moz-border-radius: 90px 90px 0 0;
+    -webkit-border-radius: 90px 90px 0 0;
+
+    text-decoration: none;
+    font-size:32px;
+  }
+  a:hover {
+    background: $primary-color;
+    color:black;
+  }
+}

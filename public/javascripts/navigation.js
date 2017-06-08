@@ -26,7 +26,7 @@ window.onscroll = function() {
 
 window.onload = function init(){
     document.getElementById("to-top").onclick = function() {
-        window.scrollTo(window.scrollX,0);
+        scrollIt(0,300);
     };
 
     // the code to be called when the dom has loaded
@@ -75,9 +75,7 @@ function scrollToSection(navName) {
     var divId = document.getElementById(navName);
     var navBarId = document.getElementById("main-nav");
     var scrollY = divId.offsetTop - navBarId.offsetHeight;
-    //window.scrollTo(window.scrollX,scrollY);
+    // window.scrollTo(window.scrollX,scrollY);
+    scrollIt(scrollY,300);
     // Scroll to a certain element
-    divId.scrollIntoView({
-        behavior: 'smooth'
-    });
 }

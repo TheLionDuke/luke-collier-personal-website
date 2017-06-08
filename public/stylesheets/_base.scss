@@ -1,7 +1,13 @@
-// Import the colour scheme
-@import 'scheme';
+// Import font
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 
-html {
+$primary-color: #e8cf22;
+$secondary-color: #3c3c3c;
+$accent-color: #E86850;
+
+// Styles the selection across the entire page
+::selection {
+  background: $primary-color;
 }
 
 h1 {
@@ -10,6 +16,7 @@ h1 {
 }
 
 body {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;

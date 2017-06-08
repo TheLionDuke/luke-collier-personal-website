@@ -1,0 +1,40 @@
+@import '_helper';
+
+// Import the colour scheme
+@import '_base';
+
+.social-nav {
+  ul {
+    @include flexbox();
+    @include justify-content(center);
+    @include flex-wrap(wrap);
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  li {
+    list-style-type: none;
+    margin:32px;
+  }
+
+  a {
+    @include rounded-border(7.5%);
+
+    font-size: 1.2em;
+    display: block;
+    color: white;
+    padding: 1em;
+    text-decoration: none;
+
+    img {
+      width:64px;
+      height:64px;
+    }
+  }
+
+  a:hover {
+    background-color: $primary-color;
+  }
+}

@@ -1,0 +1,77 @@
+@import '_helper';
+
+// Import the colour scheme
+@import '_base';
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.video {
+  position: relative;
+  left: 50%;
+  width: 100%;
+
+  z-index: -100;
+  background: $secondary-color;
+  @include transform(translateX(-50%), translateY(0%));
+}
+
+.profile {
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  position: absolute;
+  top: calc(50% - 64px);
+  width:100%;
+  background-color: rgba(0, 0, 0, .4);
+  text-align: center;
+
+  img {
+    @include rounded-border(50%);
+    display: inline-block;
+    margin: 8px;
+    width: 128px;
+  }
+
+  .details {
+    display:inline;
+    margin: 8px;
+    padding: 0;
+  }
+
+  h1, h2 {
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.next-nav {
+  position: absolute;
+  top: calc(80% - 16px);
+  width:100%;
+
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+  text-align: center;
+
+  button {
+    background-color: rgba(0,0,0,.4); /* Transparent */
+    color: white;
+  }
+}
+
+.skills-container {
+  .skills-card {
+    width:300px;
+    margin:8px;
+
+    img {
+      height: calc(64px);
+      width: calc(64px);
+    }
+  }
+}

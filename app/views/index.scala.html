@@ -1,7 +1,6 @@
-@(title: String)
+@(title: String)(projectData: ProjectData)
 
 @main(title) {
-    <!-- The main nav section -->
     <nav class="main-nav" id = "main-nav">
         <ul>
             <li class="logo" id="logo">LC</li>
@@ -86,14 +85,13 @@
             <!-- The projects section -->
         <div class="projects" id="projects">
             <div class="projects-details">
-                <h1>Projects</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h1>@projectData.title</h1>
+                <p>@projectData.description</p>
             </div>
             <div class="projects-container flex-center-container">
-                @card("Project 1")("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-                @card("Project 2")("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-                @card("Project 2")("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-                @card("Project 4")("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                @for(project <- projectData.projects) {
+                    @card(project.title)(project.description)
+                }
             </div>
         </div>
             <!-- The connect section -->

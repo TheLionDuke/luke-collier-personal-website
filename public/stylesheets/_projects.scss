@@ -1,0 +1,33 @@
+@import '_helper';
+
+// Import the colour scheme
+@import '_base';
+
+.projects-container {
+  margin-bottom: 32px;
+  .project-card {
+    background: $secondary-color;
+    width: 27.5%;
+    min-width: 260px;
+    padding: 16px;
+    margin: 16px;
+    border: 2px solid $primary-color;
+    background-size: auto;
+
+    button {
+      color: white;
+      margin: 8px;
+      background-color: rgba(0,0,0,.4);
+    }
+
+    button:hover {
+      background-color: $primary-color;
+      color: $secondary-color;
+    }
+  }
+}
+
+.projects-details {
+  text-align:center;
+  width:50%;
+}
